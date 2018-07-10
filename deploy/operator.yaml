@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: echo-operator
+  template:
+    metadata:
+      labels:
+        name: echo-operator
+    spec:
+      containers:
+        - name: echo-operator
+          image: docker.io/tohinkashem/echo-operator:v0.0.2
+          ports:
+          - containerPort: 60000
+            name: metrics
+          command:
+          - echo-operator
+          imagePullPolicy: Always
+          env:
+            - name: WATCH_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: OPERATOR_NAME
+              value: "echo-operator"
