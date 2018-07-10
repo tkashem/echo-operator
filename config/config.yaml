@@ -1,0 +1,3 @@
+apiVersion: echo.redhat.com/v1
+kind: EchoApp
+projectName: echo-operator

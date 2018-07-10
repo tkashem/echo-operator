@@ -1,0 +1,13 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: echoapps.echo.redhat.com
+spec:
+  group: echo.redhat.com
+  names:
+    kind: EchoApp
+    listKind: EchoAppList
+    plural: echoapps
+    singular: echoapp
+  scope: Namespaced
+  version: v1
