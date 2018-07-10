@@ -23,11 +23,11 @@ $ cd ${OPERATOR_NAME}
 # build and push image
 REGISTRY=docker.io
 ORG=tohinkashem
-VERSION=v0.0.1
+TAG=v0.0.1
 
-$ operator-sdk build ${REGISTRY}/${ORG}/${OPERATOR_NAME}:${VERSION}
+$ operator-sdk build ${REGISTRY}/${ORG}/${OPERATOR_NAME}:${TAG}
 
-$ docker push ${REGISTRY}/${ORG}/${OPERATOR_NAME}:${VERSION}
+$ docker push ${REGISTRY}/${ORG}/${OPERATOR_NAME}:${TAG}
 
 ```
 
