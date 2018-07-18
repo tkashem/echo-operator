@@ -1,0 +1,7 @@
+apiVersion: "echo.redhat.com/v1"
+kind: "EchoApp"
+metadata:
+    name: "echo-local"
+spec:
+  size: 1
+  image: "docker.io/tohinkashem/echo:1.0"
