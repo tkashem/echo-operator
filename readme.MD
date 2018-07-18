@@ -1,4 +1,4 @@
-## Steps
+## Building an Operator with the operator-sdk
 
 ```bash
 # build operaotr-sdk
@@ -53,4 +53,22 @@ type EchoAppStatus struct {
 
 ```bash
 $ operator-sdk generate k8s
+```
+
+## Deploying the operator
+```bash
+# Create the custom resource definition
+$ kubectl create -f deploy/crd.yaml
+
+# Create the Roleand create the Role Binding
+$ kubectl create -f deploy/rbac.yaml
+
+# Deploy the operator
+$ kubectl create -f deploy/operator.yaml
+```
+
+## Deploying a single node echo cluster
+```bash
+# Deploy the cluster
+$ kubectl create -f deploy/example-single-node-cluster.yaml
 ```
